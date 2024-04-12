@@ -52,10 +52,16 @@ class player(gameobject):
             self.rect.y -= 5
             self.directon='verh'
 
+fon = image.load('fon.jpg')
+fon = transform.scale(fon, (1000,600))
+
+hero = player('gg.png', 200,200, 35,35)
+
 while game:
     for e in event.get():
         if e.type == QUIT:
             game = False
+    okno.blit(fon,(0,0))
     okno.fill((255,255,0))
     fps.tick(60)
     display.update()
